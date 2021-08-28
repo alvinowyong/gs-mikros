@@ -50,4 +50,54 @@ public class HomeController {
         // Fetch All Subscribed Vessels Alerts
         return "home";
     }
+
+    @GetMapping("/home/remittance")
+    public String remittance(){
+        return "remit";
+    }
+
+    @GetMapping("/remittance")
+    public String guestremittance(){
+        return "guest_remit";
+    }
+
+    @GetMapping("/home/invest")
+    public String invest(){
+        return "invest";
+    }
+
+    @GetMapping("/invest")
+    public String guestinvest(){
+        return "guest_invest";
+    }
+
+    @GetMapping("/home/save")
+    public String save(){
+        return "save";
+    }
+
+    @GetMapping("/save")
+    public String guestsave(){
+        return "guest_save";
+    }
+
+    @GetMapping("/home/borrow")
+    public String borrow(){
+        return "borrow";
+    }
+
+    @GetMapping("/borrow")
+    public String guestborrow(){
+        return "guest_borrow";
+    }
+
+    @GetMapping("/home/learn")
+    public String learn(){
+        return "learn";
+    }
+
+    @GetMapping("/learn")
+    public String guestlearn(){
+        return "guest_learn";
+    }
 }

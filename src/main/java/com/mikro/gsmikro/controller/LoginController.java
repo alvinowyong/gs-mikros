@@ -21,7 +21,12 @@ public class LoginController {
     // Catching some minor differences in path
     @GetMapping(value = {"","/"})
     public String index(){
-        return "index";
+        // If user is already logged in, redirect to home page instead.
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || authentication instanceof AnonymousAuthenticationToken){
+            return "index";
+        }
+        return "redirect:home";
     }
 
     @GetMapping("/login")
@@ -54,9 +59,9 @@ public class LoginController {
     }
 
     // Display logout success message
-    @GetMapping("loggedout")
+    @GetMapping("/loggedout")
     public String loggedOut(Model model) {
         model.addAttribute("message","logout");
-        return "unauthorised/login";
+        return "login";
     }
 }
