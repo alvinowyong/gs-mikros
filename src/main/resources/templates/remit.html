@@ -543,10 +543,37 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 </style>
+    <script type="text/javascript">
+    function currency() {
+        var s = document.getElementById("source").value
+        var t = document.getElementById("target").value
+        var a = document.getElementById("amount").value
+        const request = new XMLHttpRequest();
+        request.open("GET", "https://v6.exchangerate-api.com/v6/d522de75c0b74b38448f5a04/latest/" + s);
+        request.send();
+        request.onload = () => {
+            console.log(request);
+            if(request.status === 200) {
+                var json = JSON.parse(request.response);
+                var rates = json['conversion_rates'];
+                console.log(rates);
+                var rate = rates[t];
+                console.log(rate);
+                document.getElementById("result").value = (a * rate).toFixed(2);
+                document.getElementById("errate").innerHTML = rate.toFixed(2);
+                document.getElementById("ersource").innerHTML = s;
+                document.getElementById("ertarget").innerHTML = t;
+
+            } else {
+                console.log('Error ${request.status}');
+            }
+        }
+    }
+    </script>
 </head>
 
 <body>
-<nav class="navbar navbar-light custom-navbar">
+<nav class="navbar navbar-light custom-navbar" style="box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);">
     <div class="container">
         <div class="nav-main">
             <a class="navbar-brand" href="/home"><img src="https://i.ibb.co/MRBNkN2/mikro-big.png" alt="Image" height="50px" style="padding-right: 3rem;"></a>
@@ -557,201 +584,75 @@ h1, h2, h3, h4, h5, h6, .font-heading {
             <button onclick="location.href = '/home/learn';" style="width: 120px; margin-bottom: 0; background: none; padding: none; border: none; height: 60.14px"><p style="font-size:1.02rem; font-weight: 500; color: #2f4863;">Learn</p></button>
         </div>
         <div>
-            <button type="button" class="btn btn-dark" style="font-size: 15px; font-weight: 500px">Sign Up</button>
-            <button type="button" class="btn btn-outline-dark" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/login';"><i class="bi bi-person"></i>&nbsp;&nbsp;Log In</button>
+            <button type="button" class="btn btn-danger" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/logout';"><i class="bi bi-box-arrow-right"></i>&nbsp;&nbsp;Log Out</button>
         </div>
-
     </div>
 </nav>
 
 <main id="main">
-
-    <!-- ======= Works Section ======= -->
-    <section class="section banner" style="padding: 14rem 0; height: 600px; background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) ), url('https://i.im.ge/2021/08/28/QuLKmF.png'); background-position: bottom; background-size: cover; background-repeat: no-repeat;">
-        <div class="container" style="color:white;">
-            <h1>Finances for your loved ones</h1>
-            <h4 style="font-weight: 400">We can help you reach your loved ones,<br>
-                without and hidden fees - at<br>
-                a fixed rate.</h4>
-        </div>
-    </section>
-    <!--    <section class="section site-portfolio" style="padding: 0 0;">-->
-    <!--        <div class="container">-->
-    <!--&lt;!&ndash;            <div class="row mb-5 align-items-center">&ndash;&gt;-->
-    <!--&lt;!&ndash;                <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">&ndash;&gt;-->
-    <!--&lt;!&ndash;                    <h2>I'm Alvin Owyong</h2>&ndash;&gt;-->
-    <!--&lt;!&ndash;                    <p class="mb-0">A multidisciplinary software developer, specializing in the development of pragmatic solutions for real-world problems - with real users and tangible impacts.</p>&ndash;&gt;-->
-    <!--&lt;!&ndash;                </div>&ndash;&gt;-->
-    <!--&lt;!&ndash;                <div class="col-md-12 col-lg-6 text-start text-lg-end" data-aos="fade-up" data-aos-delay="100">&ndash;&gt;-->
-    <!--&lt;!&ndash;                    <div id="filters" class="filters">&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <a href="#" data-filter="*" class="active">All</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <a href="#" data-filter=".web">Web</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <a href="#" data-filter=".design">Design</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <a href="#" data-filter=".branding">Branding</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <a href="#" data-filter=".photography">Photography</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-    <!--&lt;!&ndash;                </div>&ndash;&gt;-->
-    <!--&lt;!&ndash;            </div>&ndash;&gt;-->
-    <!--            <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">-->
-    <!--                &lt;!&ndash; <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                  <a href="work-single.html" class="item-wrap fancybox">-->
-    <!--                    <div class="work-info">-->
-    <!--                      <h3>Boxed Water</h3>-->
-    <!--                      <span>Web</span>-->
-    <!--                    </div>-->
-    <!--                    <img class="img-fluid" src="assets/img/img_2.jpg">-->
-    <!--                  </a>-->
-    <!--                </div> &ndash;&gt;-->
-    <!--                <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                    <a href="#" class="item-wrap fancybox">-->
-    <!--                        <div class="work-info">-->
-    <!--                            <h3>OpenLearn Telegram Bot</h3>-->
-    <!--                            <span>Web</span>-->
-    <!--                        </div>-->
-    <!--                        <img class="img-fluid" src="https://i.ibb.co/xsT6dWJ/img-5.png">-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--                <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                    <a href="work-huatcalculator.html" class="item-wrap fancybox">-->
-    <!--                        <div class="work-info">-->
-    <!--                            <h3 style="font-family: var(&#45;&#45;bs-font-sans-serif);">Huat Calculator</h3>-->
-    <!--                            <span>Web</span>-->
-    <!--                        </div>-->
-    <!--                        <img class="img-fluid" src="https://i.ibb.co/xsT6dWJ/img-5.png">-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--                <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                    <a href="#" class="item-wrap fancybox">-->
-    <!--                        <div class="work-info">-->
-    <!--                            <h3 style="font-family: var(&#45;&#45;bs-font-sans-serif);">Port Management Web Application</h3>-->
-    <!--                            <span>Web</span>-->
-    <!--                        </div>-->
-    <!--                        <img class="img-fluid" src="https://i.ibb.co/xsT6dWJ/img-5.png">-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--                <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                    <a href="work-yokefellow.html" class="item-wrap fancybox">-->
-    <!--                        <div class="work-info">-->
-    <!--                            <h3 style="font-family: var(&#45;&#45;bs-font-sans-serif);">Project Yokefellow</h3>-->
-    <!--                            <span>Branding</span>-->
-    <!--                        </div>-->
-    <!--                        <img class="img-fluid" src="https://i.ibb.co/xsT6dWJ/img-5.png">-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--                <div class="item web design col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                    <a href="work-upcycle.html" class="item-wrap fancybox">-->
-    <!--                        <div class="work-info">-->
-    <!--                            <h3 style="font-family: var(&#45;&#45;bs-font-sans-serif);">Project UpCycle</h3>-->
-    <!--                            <span>Design</span>-->
-    <!--                        </div>-->
-    <!--                        <img class="img-fluid" src="https://i.ibb.co/xsT6dWJ/img-5.png">-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--                <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                    <a href="work-guidebook.html" class="item-wrap fancybox">-->
-    <!--                        <div class="work-info">-->
-    <!--                            <h3 style="font-family: var(&#45;&#45;bs-font-sans-serif);">Tricity Country Guidebook</h3>-->
-    <!--                            <span>Design</span>-->
-    <!--                        </div>-->
-    <!--                        <img class="img-fluid" src="https://i.ibb.co/xsT6dWJ/img-5.png">-->
-    <!--                    </a>-->
-    <!--                </div>-->
-
-    <!--                <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">-->
-    <!--                    <a href="work-photography.html" class="item-wrap fancybox">-->
-    <!--                        <div class="work-info">-->
-    <!--                            <h3>Archive Shots</h3>-->
-    <!--                            <span>Photography</span>-->
-    <!--                        </div>-->
-    <!--                        <img class="img-fluid" src="https://i.ibb.co/xsT6dWJ/img-5.png">-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </section>-->
-
-    <section class="section" style="padding-top: 3rem;">
-        <div class="container">
-            <div class="row justify-content-center text-center mb-4">
-                <div class="col-12">
-                    <h3 class="h3 heading">Organisations We've Worked With</h3>
-                    <p>Mikro has worked with a wide range of organisations over the past 15 years.<br>This includes social enterprises, trust and foundations, government bodies and businesses.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/sw2YP4T/CMSC-logo-Option-1-A-1.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/0Z9pj7V/logo-westlite-1.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/JxN6sSQ/organization-logo.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/LvwDKRg/mom-logo-share-hd.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/k4Cs2xX/HOMELogo.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/yN2JQnx/1200px-National-Council-of-Social-Service-logo.png" alt="Image" class="img-fluid"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="section" style="padding: 3rem 0;">
         <div class="container">
-            <div class="row justify-content-center text-center mb-4">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <img src="https://i.im.ge/2021/08/28/QuibB1.png" alt="Mobile application" style="height: 760px;">
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding-top:13rem; text-align: -webkit-left;">
-                    <h3 class="h3 heading">
-                        Manage your services on the go!
-                    </h3>
-                    <p>The Mikros mobile app give you fast, easy mobile access to your account anytime with just a few taps.</p>
-                    <img src="https://iconape.com/wp-content/png_logo_vector/app-store-google-play-logo.png" alr="Store icon" style="height:130px;">
-                </div>
+            <div class="d-flex bd-highlight mb-3">
+                <h3>MikroRemit - International Money Transfer</h3>
+                <p>Whether you’re managing an overseas investment, sending money home or paying for your child’s education abroad, MikroRemit makes it seamless and effortlessly quick - right from your mobile phone.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="section services" style="padding: 3rem;">
-        <div class="container">
-            <div class="row justify-content-center text-center mb-4">
-                <div class="col-12">
-                    <h3 class="h3 heading">Our Services</h3>
-                    <p>We provide a dedicated range of micro-financial services which has been tailors specifically to suit your needs.</p>
+            <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
+                <div class="gamut-u4h8rt-Column e1y0e4q30" style="padding-left: 24px;">
+                    <div class="card w-50">
+                        <img src="https://i.im.ge/2021/08/29/QFR4GK.png">
+                        <div class="card-body">
+                            <h5 class="card-title">Remittance Calculator</h5>
+                            <p class="card-text" style="font-size: 1rem;">Convert between currencies using our latest rates.</p>
+                            <div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <select class="input-group-text select remittance" id="source" onchange="currency()">
+                                            <option value="SGD" selected="selected">SGD</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="CHF">CHF</option>
+                                            <option value="CNY">CNY</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="HKD">HKD</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="NOK">NOK</option>
+                                            <option value="NZD">NZD</option>
+                                            <option value="SEK">SEK</option>
+                                            <option value="THB">THB</option>
+                                            <option value="USD">USD</option>
+                                        </select>
+                                    </div>
+                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="100" id="amount" aria-label="Amount (to the nearest dollar)" onchange="currency()">
+                                </div>
+                                <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
+                                    <div class="input-group-prepend">
+                                        <select class="input-group-text select remittance" id="target" onchange="currency()">
+                                            <option value="SGD">SGD</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="CHF">CHF</option>
+                                            <option value="CNY">CNY</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="HKD">HKD</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="NOK">NOK</option>
+                                            <option value="NZD">NZD</option>
+                                            <option value="SEK">SEK</option>
+                                            <option value="THB">THB</option>
+                                            <option value="USD" selected="selected">USD</option>
+                                        </select>
+                                    </div>
+                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="0" id="result" aria-label="Amount (to the nearest dollar)" disabled>
+                                </div>
+                            </div>
+                            <small>Exchange Rate: 1 <span id="ersource">SGD</span> = <span id="errate">0</span><span id="ertarget">USD</span></small>
+                            <br>
+                            <a href="/error" class="btn btn-dark" style="margin-top: 1rem;">Remit Now</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-currency-exchange"></i>
-                    <h3 class="h4 mb-2 heading">Remittances</h3>
-                    <p style="text-align: justify;font-size: 1.02rem;">Remit money; no hidden fee.</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-briefcase"></i>
-                    <h3 class="h4 mb-2 heading">Investments</h3>
-                    <p style="text-align: justify;font-size: 1.02rem;">Managed portfolio to help achieve your goals.</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-life-preserver"></i>
-                    <h3 class="h4 mb-2 heading">Savings</h3>
-                    <p style="text-align: justify;font-size: 1.02rem;">High-yield of up to 0.50% APY.</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-book"></i>
-                    <h3 class="h4 mb-2 heading">Micro-Loans</h3>
-                    <p style="text-align: justify; font-size: 1.02rem;">No-fee, fixed-rate loans from as small as $100.</p>
-                </div>
-                <!--                <div class="col-12 col-sm-6 col-md-6 col-lg-3">-->
-                <!--                    <i class="bi bi-calendar4-week"></i>-->
-                <!--                    <h4 class="h4 mb-2">SEO</h4>-->
-                <!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit explicabo inventore.</p>-->
-                <!--                </div>-->
             </div>
         </div>
     </section>

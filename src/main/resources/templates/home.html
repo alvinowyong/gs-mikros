@@ -733,6 +733,33 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 </style>
+    <script type="text/javascript">
+    function currency() {
+        var s = document.getElementById("source").value
+        var t = document.getElementById("target").value
+        var a = document.getElementById("amount").value
+        const request = new XMLHttpRequest();
+        request.open("GET", "https://v6.exchangerate-api.com/v6/d522de75c0b74b38448f5a04/latest/" + s);
+        request.send();
+        request.onload = () => {
+            console.log(request);
+            if(request.status === 200) {
+                var json = JSON.parse(request.response);
+                var rates = json['conversion_rates'];
+                console.log(rates);
+                var rate = rates[t];
+                console.log(rate);
+                document.getElementById("result").value = (a * rate).toFixed(2);
+                document.getElementById("errate").innerHTML = rate.toFixed(2);
+                document.getElementById("ersource").innerHTML = s;
+                document.getElementById("ertarget").innerHTML = t;
+
+            } else {
+                console.log('Error ${request.status}');
+            }
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -766,12 +793,8 @@ h1, h2, h3, h4, h5, h6, .font-heading {
             <button onclick="location.href = '/home/learn';" style="width: 120px; margin-bottom: 0; background: none; padding: none; border: none; height: 60.14px"><p style="font-size:1.02rem; font-weight: 500; color: #2f4863;">Learn</p></button>
         </div>
         <div>
-
-        </div>
-        <div>
             <button type="button" class="btn btn-danger" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/logout';"><i class="bi bi-box-arrow-right"></i>&nbsp;&nbsp;Log Out</button>
         </div>
-
     </div>
 </nav>
 
@@ -788,8 +811,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
         <div class="container">
             <div class="d-flex bd-highlight mb-3">
                 <div class="mr-auto p-2 bd-highlight">
-                    <img src="https://i.im.ge/2021/08/28/Qu96sx.png" style="height:40px;">
-                    <!--                    <h3 class="gamut-1k2tydn-Text-Header e98s4t80 heading">Mikros Academy™: Explore our catalog</h3>-->
+                    <h3 class="heading h3">MikroRemit</h3>
                 </div>
                 <div class="p-2 bd-highlight">
                     <a data-testid="browse-catalog-link" class="e1w6mdco0 gamut-csyto9-ResetElement-createButtonComponent e1bhhzie0" href="/catalog" aria-disabled="false">Browse Courses →</a>
@@ -804,18 +826,50 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                             <div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">SGD</span>
+                                        <select class="input-group-text select remittance" id="source" onchange="currency()">
+                                            <option value="SGD" selected="selected">SGD</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="CHF">CHF</option>
+                                            <option value="CNY">CNY</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="HKD">HKD</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="NOK">NOK</option>
+                                            <option value="NZD">NZD</option>
+                                            <option value="SEK">SEK</option>
+                                            <option value="THB">THB</option>
+                                            <option value="USD">USD</option>
+                                        </select>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="100" id="amount" aria-label="Amount (to the nearest dollar)" onchange="currency()">
                                 </div>
-                                <div class="input-group mb-3">
+                                <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">CAD</span>
+                                        <select class="input-group-text select remittance" id="target" onchange="currency()">
+                                            <option value="SGD">SGD</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="CHF">CHF</option>
+                                            <option value="CNY">CNY</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="HKD">HKD</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="NOK">NOK</option>
+                                            <option value="NZD">NZD</option>
+                                            <option value="SEK">SEK</option>
+                                            <option value="THB">THB</option>
+                                            <option value="USD" selected="selected">USD</option>
+                                        </select>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="0" id="result" aria-label="Amount (to the nearest dollar)" disabled>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-dark">Calculate</a>
+                            <small>Exchange Rate: 1 <span id="ersource">SGD</span> = <span id="errate">0</span><span id="ertarget">USD</span></small>
+                            <br>
+                            <a href="/error" class="btn btn-dark" style="margin-top: 1rem;">Remit Now</a>
                         </div>
                     </div>
                 </div>
@@ -855,7 +909,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                             <div class="eeujxae0 gamut-1vh2hfp-VariableProvider-CardWrapper e1skjn880">
                                 <div class="gamut-1vofu7t-Box ebnwbv90">
                                     <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Python</p>
+                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Finance Basics</p>
                                 </div>
                             </div>
                         </a></div>
@@ -864,7 +918,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                             <div class="eeujxae0 gamut-1vh2hfp-VariableProvider-CardWrapper e1skjn880">
                                 <div class="gamut-1vofu7t-Box ebnwbv90">
                                     <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Python</p>
+                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Financial Habits</p>
                                 </div>
                             </div>
                         </a></div>
@@ -873,7 +927,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                             <div class="eeujxae0 gamut-2ye2pf-VariableProvider-CardWrapper e1skjn880">
                                 <div class="gamut-1vofu7t-Box ebnwbv90">
                                     <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Web Development</p>
+                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Fixed Deposits</p>
                                 </div>
                             </div>
                         </a></div>
@@ -882,7 +936,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                             <div class="eeujxae0 gamut-z5ixvy-VariableProvider-CardWrapper e1skjn880">
                                 <div class="gamut-1vofu7t-Box ebnwbv90">
                                     <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Data Science</p>
+                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Stocks and Bonds</p>
                                 </div>
                             </div>
                         </a></div>
