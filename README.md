@@ -1,5 +1,5 @@
-# Mikros™ - Migrate to a better future
-By Team Noobs - Ellipsis Hackathon 2021
+# Mikros™ - Migrate to a better future (Demo available at: https://bit.ly/3zrYwnP)
+By Team Noobs TS034 - Ellipsis Hackathon 2021
 1. Owyong Jian Wei
 2. Sim Jia Cheng Malcolm
 3. Tan Quan Wah
