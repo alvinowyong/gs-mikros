@@ -813,63 +813,69 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                 <div class="mr-auto p-2 bd-highlight">
                     <h3 class="heading h3">MikroRemit</h3>
                 </div>
-                <div class="p-2 bd-highlight">
-                    <a data-testid="browse-catalog-link" class="e1w6mdco0 gamut-csyto9-ResetElement-createButtonComponent e1bhhzie0" href="/catalog" aria-disabled="false">Browse Courses →</a>
-                </div>
+<!--                <div class="p-2 bd-highlight">-->
+<!--                    <a data-testid="browse-catalog-link" class="e1w6mdco0 gamut-csyto9-ResetElement-createButtonComponent e1bhhzie0" href="/catalog" aria-disabled="false">Browse Courses →</a>-->
+<!--                </div>-->
             </div>
             <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
                 <div class="gamut-u4h8rt-Column e1y0e4q30" style="padding-left: 24px;">
-                    <div class="card w-50">
-                        <div class="card-body">
-                            <h5 class="card-title">Remittance Calculator</h5>
-                            <p class="card-text" style="font-size: 1rem;">Convert between currencies using our latest rates.</p>
-                            <div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <select class="input-group-text select remittance" id="source" onchange="currency()">
-                                            <option value="SGD" selected="selected">SGD</option>
-                                            <option value="AUD">AUD</option>
-                                            <option value="CAD">CAD</option>
-                                            <option value="CHF">CHF</option>
-                                            <option value="CNY">CNY</option>
-                                            <option value="EUR">EUR</option>
-                                            <option value="GBP">GBP</option>
-                                            <option value="HKD">HKD</option>
-                                            <option value="JPY">JPY</option>
-                                            <option value="NOK">NOK</option>
-                                            <option value="NZD">NZD</option>
-                                            <option value="SEK">SEK</option>
-                                            <option value="THB">THB</option>
-                                            <option value="USD">USD</option>
-                                        </select>
+                    <div class="row" style="margin-bottom: 40px">
+                        <div class="card w-50">
+                            <img src="https://images.pexels.com/photos/7267226/pexels-photo-7267226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        </div>
+                        <div class="card w-50">
+                            <div class="card-body" style="padding:2.25rem;">
+                                <h5 class="card-title">Remittance Calculator</h5>
+                                <p class="card-text" style="font-size: 1rem;">Convert between currencies using our latest rates.</p>
+                                <div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <select class="input-group-text select remittance" id="source" onchange="currency()">
+                                                <option value="SGD" selected="selected">SGD</option>
+                                                <option value="AUD">AUD</option>
+                                                <option value="CAD">CAD</option>
+                                                <option value="CHF">CHF</option>
+                                                <option value="CNY">CNY</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="HKD">HKD</option>
+                                                <option value="JPY">JPY</option>
+                                                <option value="NOK">NOK</option>
+                                                <option value="NZD">NZD</option>
+                                                <option value="SEK">SEK</option>
+                                                <option value="THB">THB</option>
+                                                <option value="USD">USD</option>
+                                            </select>
+                                        </div>
+                                        <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="100" id="amount" aria-label="Amount (to the nearest dollar)" onchange="currency()">
                                     </div>
-                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="100" id="amount" aria-label="Amount (to the nearest dollar)" onchange="currency()">
-                                </div>
-                                <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
-                                    <div class="input-group-prepend">
-                                        <select class="input-group-text select remittance" id="target" onchange="currency()">
-                                            <option value="SGD">SGD</option>
-                                            <option value="AUD">AUD</option>
-                                            <option value="CAD">CAD</option>
-                                            <option value="CHF">CHF</option>
-                                            <option value="CNY">CNY</option>
-                                            <option value="EUR">EUR</option>
-                                            <option value="GBP">GBP</option>
-                                            <option value="HKD">HKD</option>
-                                            <option value="JPY">JPY</option>
-                                            <option value="NOK">NOK</option>
-                                            <option value="NZD">NZD</option>
-                                            <option value="SEK">SEK</option>
-                                            <option value="THB">THB</option>
-                                            <option value="USD" selected="selected">USD</option>
-                                        </select>
+                                    <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
+                                        <div class="input-group-prepend">
+                                            <select class="input-group-text select remittance" id="target" onchange="currency()">
+                                                <option value="SGD">SGD</option>
+                                                <option value="AUD">AUD</option>
+                                                <option value="CAD">CAD</option>
+                                                <option value="CHF">CHF</option>
+                                                <option value="CNY">CNY</option>
+                                                <option value="EUR">EUR</option>
+                                                <option value="GBP">GBP</option>
+                                                <option value="HKD">HKD</option>
+                                                <option value="JPY">JPY</option>
+                                                <option value="NOK">NOK</option>
+                                                <option value="NZD">NZD</option>
+                                                <option value="SEK">SEK</option>
+                                                <option value="THB">THB</option>
+                                                <option value="USD" selected="selected">USD</option>
+                                            </select>
+                                        </div>
+                                        <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="0" id="result" aria-label="Amount (to the nearest dollar)" disabled>
                                     </div>
-                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="0" id="result" aria-label="Amount (to the nearest dollar)" disabled>
                                 </div>
+                                <small>Exchange Rate: 1 <span id="ersource">SGD</span> = <span id="errate">0</span><span id="ertarget">USD</span></small>
+                                <br>
+                                <a href="/error" class="btn btn-outline-dark" style="margin-top: 1rem;">Enquire more</a>
+                                <a href="/error" class="btn btn-dark" style="margin-top: 1rem;">Remit now</a>
                             </div>
-                            <small>Exchange Rate: 1 <span id="ersource">SGD</span> = <span id="errate">0</span><span id="ertarget">USD</span></small>
-                            <br>
-                            <a href="/error" class="btn btn-dark" style="margin-top: 1rem;">Remit Now</a>
                         </div>
                     </div>
                 </div>
@@ -885,64 +891,131 @@ h1, h2, h3, h4, h5, h6, .font-heading {
             <div class="d-flex bd-highlight mb-3">
                 <div class="mr-auto p-2 bd-highlight">
                     <img src="https://i.im.ge/2021/08/28/Qu96sx.png" style="height:40px;">
-<!--                    <h3 class="gamut-1k2tydn-Text-Header e98s4t80 heading">Mikros Academy™: Explore our catalog</h3>-->
                 </div>
                 <div class="p-2 bd-highlight">
-                    <a data-testid="browse-catalog-link" class="e1w6mdco0 gamut-csyto9-ResetElement-createButtonComponent e1bhhzie0" href="/catalog" aria-disabled="false">Browse Courses →</a>
+                    <a data-testid="browse-catalog-link" class="e1w6mdco0 gamut-csyto9-ResetElement-createButtonComponent e1bhhzie0" href="/catalog" aria-disabled="false">Browse Full Catalog →</a>
                 </div>
             </div>
-            <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
-
-<!--                <div class="gamut-1mm06g9-Column e1y0e4q30">-->
-<!--                    <div>-->
-<!--                        <h3 class="gamut-1k2tydn-Text-Header e98s4t80 heading">Mikros Academy™: Explore our catalog</h3>-->
-<!--                    </div>-->
-<!--                    <div class="gamut-uw5tdh-Column-StyledColumn e98s4t81">-->
-<!--                        <a data-testid="browse-catalog-link" class="e1w6mdco0 gamut-csyto9-ResetElement-createButtonComponent e1bhhzie0" href="/catalog" aria-disabled="false">Browse Courses →</a>-->
-<!--                    </div>-->
-
-<!--                </div>-->
-                <div class="gamut-u4h8rt-Column e1y0e4q30">
-                    <div class="gamut-1pmw4iu-LayoutGrid e10xj1580">
-                        <div class="gamut-w6lb1f-Column e1y0e4q30"><a href="/catalog/language/python"
-                                                                      class="noUnderline__3auQH9YTaYeT71hkb5qMQq">
-                            <div class="eeujxae0 gamut-1vh2hfp-VariableProvider-CardWrapper e1skjn880">
-                                <div class="gamut-1vofu7t-Box ebnwbv90">
-                                    <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Finance Basics</p>
-                                </div>
-                            </div>
-                        </a></div>
-                        <div class="gamut-w6lb1f-Column e1y0e4q30"><a href="/catalog/language/python"
-                                                                      class="noUnderline__3auQH9YTaYeT71hkb5qMQq">
-                            <div class="eeujxae0 gamut-1vh2hfp-VariableProvider-CardWrapper e1skjn880">
-                                <div class="gamut-1vofu7t-Box ebnwbv90">
-                                    <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Financial Habits</p>
-                                </div>
-                            </div>
-                        </a></div>
-                        <div class="gamut-w6lb1f-Column e1y0e4q30"><a href="/catalog/subject/web-development"
-                                                                      class="noUnderline__3auQH9YTaYeT71hkb5qMQq">
-                            <div class="eeujxae0 gamut-2ye2pf-VariableProvider-CardWrapper e1skjn880">
-                                <div class="gamut-1vofu7t-Box ebnwbv90">
-                                    <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Fixed Deposits</p>
-                                </div>
-                            </div>
-                        </a></div>
-                        <div class="gamut-w6lb1f-Column e1y0e4q30"><a href="/catalog/subject/data-science"
-                                                                      class="noUnderline__3auQH9YTaYeT71hkb5qMQq">
-                            <div class="eeujxae0 gamut-z5ixvy-VariableProvider-CardWrapper e1skjn880">
-                                <div class="gamut-1vofu7t-Box ebnwbv90">
-                                    <p class="gamut-1f97w4s-Text e8i0p5k0">Explore All</p>
-                                    <p class="gamut-c3dt2s-Text e8i0p5k0">Stocks and Bonds</p>
-                                </div>
-                            </div>
-                        </a></div>
+            <p id="row1" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0; margin-top: 70px;">Mikro Get Started Courses</p>
+            <div class="row" style="margin-bottom: 40px">
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://i.im.ge/2021/08/29/QFR4GK.png">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 15 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Take your first steps with the fundamentals of finance</p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/5198239/pexels-photo-5198239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 25 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Financial markets for non-finance professionals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 30 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Other types of financial tools besides investing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/4792285/pexels-photo-4792285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 15 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">About your investment and portfolio management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!--Row 2-->
+            <p id="row2" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Savings and Financial Habits</p>
+            <div class="row" style="margin-bottom: 40px">
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 46 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">About Personal and Family Financial Planning</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 21 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Inculcating good Financial Habits into your lifestyle</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/164686/pexels-photo-164686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 43 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Principles of Goal-based Savings and Investing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/732444/pexels-photo-732444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 15 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">How to properly tracking Saving and Spending</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Row 3-->
+            <p id="row3" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Investing for Beginners</p>
+            <div class="row" style="margin-bottom: 40px">
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/394377/pexels-photo-394377.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 58 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">An Practical Guide to Investments for Dummies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/1871508/pexels-photo-1871508.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 32 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">The Art of Investing: More than just a gamble</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/5594319/pexels-photo-5594319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 31 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Diversifying risk with an investment portfolio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-sm-4 col-md-3">
+                    <div class="card w-100">
+                        <img height="168px" src="https://images.pexels.com/photos/8465995/pexels-photo-8465995.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                        <div class="card-body" style="padding-top: 0;">
+                            <small style="color: gray; font-size: 12px;">Watch, 35 min</small>
+                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">How to start your investment journey with Mikros</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

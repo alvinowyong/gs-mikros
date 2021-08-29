@@ -594,66 +594,77 @@ h1, h2, h3, h4, h5, h6, .font-heading {
         <div class="container">
             <div class="d-flex bd-highlight mb-3">
                 <h3>MikroRemit - International Money Transfer</h3>
-                <p>Whether you’re managing an overseas investment, sending money home or paying for your child’s education abroad, MikroRemit makes it seamless and effortlessly quick - right from your mobile phone.</p>
+
             </div>
-            <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
-                <div class="gamut-u4h8rt-Column e1y0e4q30" style="padding-left: 24px;">
-                    <div class="card w-50">
-                        <img src="https://i.im.ge/2021/08/29/QFR4GK.png">
-                        <div class="card-body">
-                            <h5 class="card-title">Remittance Calculator</h5>
-                            <p class="card-text" style="font-size: 1rem;">Convert between currencies using our latest rates.</p>
-                            <div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <select class="input-group-text select remittance" id="source" onchange="currency()">
-                                            <option value="SGD" selected="selected">SGD</option>
-                                            <option value="AUD">AUD</option>
-                                            <option value="CAD">CAD</option>
-                                            <option value="CHF">CHF</option>
-                                            <option value="CNY">CNY</option>
-                                            <option value="EUR">EUR</option>
-                                            <option value="GBP">GBP</option>
-                                            <option value="HKD">HKD</option>
-                                            <option value="JPY">JPY</option>
-                                            <option value="NOK">NOK</option>
-                                            <option value="NZD">NZD</option>
-                                            <option value="SEK">SEK</option>
-                                            <option value="THB">THB</option>
-                                            <option value="USD">USD</option>
-                                        </select>
-                                    </div>
-                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="100" id="amount" aria-label="Amount (to the nearest dollar)" onchange="currency()">
+            <div class="row">
+                <div class="col-12 col-md-3"><p>Whether you’re managing an overseas investment, sending money home or paying for your child’s education abroad, MikroRemit makes it seamless and effortlessly quick - right from your mobile phone.</p></div>
+                <div class="col-6 col-md-9">
+                    <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
+                        <div class="gamut-u4h8rt-Column e1y0e4q30" style="padding-left: 24px;">
+                            <div class="row" style="margin-bottom: 40px">
+                                <div class="card w-50">
+                                    <img height="360px" src="https://i.im.ge/2021/08/29/QFKPGF.png">
                                 </div>
-                                <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
-                                    <div class="input-group-prepend">
-                                        <select class="input-group-text select remittance" id="target" onchange="currency()">
-                                            <option value="SGD">SGD</option>
-                                            <option value="AUD">AUD</option>
-                                            <option value="CAD">CAD</option>
-                                            <option value="CHF">CHF</option>
-                                            <option value="CNY">CNY</option>
-                                            <option value="EUR">EUR</option>
-                                            <option value="GBP">GBP</option>
-                                            <option value="HKD">HKD</option>
-                                            <option value="JPY">JPY</option>
-                                            <option value="NOK">NOK</option>
-                                            <option value="NZD">NZD</option>
-                                            <option value="SEK">SEK</option>
-                                            <option value="THB">THB</option>
-                                            <option value="USD" selected="selected">USD</option>
-                                        </select>
+                                <div class="card w-50">
+                                    <div class="card-body" style="padding:2.25rem;">
+                                        <h5 class="card-title">Remittance Calculator</h5>
+                                        <p class="card-text" style="font-size: 1rem;">Convert between currencies using our latest rates.</p>
+                                        <div>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <select class="input-group-text select remittance" id="source" onchange="currency()">
+                                                        <option value="SGD" selected="selected">SGD</option>
+                                                        <option value="AUD">AUD</option>
+                                                        <option value="CAD">CAD</option>
+                                                        <option value="CHF">CHF</option>
+                                                        <option value="CNY">CNY</option>
+                                                        <option value="EUR">EUR</option>
+                                                        <option value="GBP">GBP</option>
+                                                        <option value="HKD">HKD</option>
+                                                        <option value="JPY">JPY</option>
+                                                        <option value="NOK">NOK</option>
+                                                        <option value="NZD">NZD</option>
+                                                        <option value="SEK">SEK</option>
+                                                        <option value="THB">THB</option>
+                                                        <option value="USD">USD</option>
+                                                    </select>
+                                                </div>
+                                                <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="100" id="amount" aria-label="Amount (to the nearest dollar)" onchange="currency()">
+                                            </div>
+                                            <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
+                                                <div class="input-group-prepend">
+                                                    <select class="input-group-text select remittance" id="target" onchange="currency()">
+                                                        <option value="SGD">SGD</option>
+                                                        <option value="AUD">AUD</option>
+                                                        <option value="CAD">CAD</option>
+                                                        <option value="CHF">CHF</option>
+                                                        <option value="CNY">CNY</option>
+                                                        <option value="EUR">EUR</option>
+                                                        <option value="GBP">GBP</option>
+                                                        <option value="HKD">HKD</option>
+                                                        <option value="JPY">JPY</option>
+                                                        <option value="NOK">NOK</option>
+                                                        <option value="NZD">NZD</option>
+                                                        <option value="SEK">SEK</option>
+                                                        <option value="THB">THB</option>
+                                                        <option value="USD" selected="selected">USD</option>
+                                                    </select>
+                                                </div>
+                                                <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="0" id="result" aria-label="Amount (to the nearest dollar)" disabled>
+                                            </div>
+                                        </div>
+                                        <small>Exchange Rate: 1 <span id="ersource">SGD</span> = <span id="errate">0</span><span id="ertarget">USD</span></small>
+                                        <br>
+                                        <a href="/error" class="btn btn-outline-dark" style="margin-top: 1rem;">Enquire more</a>
+                                        <a href="/error" class="btn btn-dark" style="margin-top: 1rem;">Remit now</a>
                                     </div>
-                                    <input style="border: 1px solid #ced4da;" type="text" class="form-control remittance" value="0" id="result" aria-label="Amount (to the nearest dollar)" disabled>
                                 </div>
                             </div>
-                            <small>Exchange Rate: 1 <span id="ersource">SGD</span> = <span id="errate">0</span><span id="ertarget">USD</span></small>
-                            <br>
-                            <a href="/error" class="btn btn-dark" style="margin-top: 1rem;">Remit Now</a>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
