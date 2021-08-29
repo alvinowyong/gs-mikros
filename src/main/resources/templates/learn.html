@@ -542,6 +542,25 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #000;
 }
 
+ul.horizontal_menuu li {
+    display: inline;
+    list-style-type: none;
+    border-right: 1px solid #999;
+    padding: 0 20px;
+    font-weight: 300;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+ul.horizontal_menuu li:hover {
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
 </style>
 </head>
 
@@ -558,6 +577,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
         </div>
         <div>
             <button type="button" class="btn btn-danger" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/logout';"><i class="bi bi-box-arrow-right"></i>&nbsp;&nbsp;Log Out</button>
+            <button type="button" class="btn btn-secondary"><i class="bi bi-person" onclick="location.href = '/error';"></i></button>
         </div>
     </div>
 </nav>

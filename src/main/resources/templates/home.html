@@ -34,6 +34,11 @@ p {
     color: #333333;
 }
 
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
 .gamut-59hvi-LayoutGrid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     display: grid;
@@ -732,6 +737,25 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     background-color: #ececec;
 }
 
+.bar {
+    border-radius: 20px;
+    width: 0%;
+    height: 100%;
+    transition: width;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.36,.55,.63,.48);
+}
+
+.zigZag {
+    background-color: #00dac3;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%23008386' fill-opacity='0.7' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.shadow {
+    /* 25 50 */
+    box-shadow: 0px 45px 50px rgba(0, 0, 0, 0.25);
+}
+
 </style>
     <script type="text/javascript">
     function currency() {
@@ -760,28 +784,39 @@ h1, h2, h3, h4, h5, h6, .font-heading {
         }
     }
     </script>
+    <script type="text/javascript">
+        var d = new Date();
+        var month = new Array();
+        month[0] = "January";
+        month[1] = "February";
+        month[2] = "March";
+        month[3] = "April";
+        month[4] = "May";
+        month[5] = "June";
+        month[6] = "July";
+        month[7] = "August";
+        month[8] = "September";
+        month[9] = "October";
+        month[10] = "November";
+        month[11] = "December";
+        var n = month[d.getMonth()];
+        document.getElementById("mikroprogress").innerHTML = "Progress for the month of " + n;
+    </script>
+    <script type="text/javascript">
+    function date() {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+        document.getElementById("todaydate").innerHTML = today;
+    }
+    </script>
+
 </head>
 
-<body>
-
-<!-- ======= Navbar ======= -->
-<!--<div class="collapse navbar-collapse custom-navmenu" id="main-navbar">-->
-<!--    <div class="container py-2 py-md-5">-->
-<!--        <div class="row align-items-start">-->
-<!--            <div class="col-md-2">-->
-<!--                <ul class="custom-menu">-->
-<!--                    <li class="active"><a href="index.html">Home</a></li>-->
-<!--                    <li><a href="about.html">About Me</a></li>-->
-<!--                     <li><a href="services.html">Services</a></li>-->
-<!--                    <li><a href="works.html">Works</a></li>-->
-<!--                    <li><a href="contact.html">Contact</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--    </div>-->
-<!--</div>-->
-
+<body onload="date()">
 <nav class="navbar navbar-light custom-navbar">
     <div class="container">
         <div class="nav-main">
@@ -794,6 +829,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
         </div>
         <div>
             <button type="button" class="btn btn-danger" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/logout';"><i class="bi bi-box-arrow-right"></i>&nbsp;&nbsp;Log Out</button>
+            <button type="button" class="btn btn-secondary"><i class="bi bi-person" onclick="location.href = '/error';"></i></button>
         </div>
     </div>
 </nav>
@@ -807,15 +843,45 @@ h1, h2, h3, h4, h5, h6, .font-heading {
             <h4 style="font-weight: 400">How can we help you today?</h4>
         </div>
     </section>
+    <section class="section" style="padding: 3rem 0; padding-bottom: 0;">
+        <div class="container">
+            <div class="d-flex bd-highlight mb-3" style="padding-bottom: 2rem;">
+                <div class="mr-auto p-2 bd-highlight">
+                    <h3 class="heading h3"><span th:text="${firstname}" style="text-decoration: underline;"></span><span style="text-decoration: underline;">'s</span> Account Overview</h3>
+                    <small><span>Accurate as at </span><span id="todaydate"></span></small>
+                </div>
+            </div>
+            <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
+                <div class="gamut-u4h8rt-Column e1y0e4q30" style="padding-left: 24px;">
+                    <div class="row" style="margin-bottom: 40px">
+                        <div class="col-12 col-md-4" style="border-right: 1px solid #999;">
+                            <h3>Deposits Balance</h3>
+                            <p><small>SGD </small><span th:text="${savings}"></span></p>
+                        </div>
+                        <div class="col-12 col-md-4" style="border-right: 1px solid #999; padding-left: 3rem;">
+                            <h3>Fix Deposits</h3>
+                            <p><small>SGD </small><span th:text="${fixed}"></span></p>
+                        </div>
+                        <div class="col-12 col-md-4" style="padding-left: 3rem;">
+                            <h3>Investments</h3>
+                            <p><small>SGD </small><span th:text="${investments}"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <hr>
+    </div>
+
     <section class="section" style="padding: 3rem 0;">
         <div class="container">
             <div class="d-flex bd-highlight mb-3">
                 <div class="mr-auto p-2 bd-highlight">
                     <h3 class="heading h3">MikroRemit</h3>
                 </div>
-<!--                <div class="p-2 bd-highlight">-->
-<!--                    <a data-testid="browse-catalog-link" class="e1w6mdco0 gamut-csyto9-ResetElement-createButtonComponent e1bhhzie0" href="/catalog" aria-disabled="false">Browse Courses →</a>-->
-<!--                </div>-->
             </div>
             <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
                 <div class="gamut-u4h8rt-Column e1y0e4q30" style="padding-left: 24px;">

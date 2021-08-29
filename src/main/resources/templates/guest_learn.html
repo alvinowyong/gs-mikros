@@ -37,6 +37,11 @@ ul.horizontal_menuu li {
     font-weight: 300;
 }
 
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
 ul.horizontal_menuu li:hover {
     font-weight: 600;
     cursor: pointer;
@@ -571,7 +576,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
             <button onclick="location.href = '/learn';" style="width: 120px; margin-bottom: 0; padding: none; border: none; height: 60.14px"><p style="font-size:1.02rem; font-weight: 500; color: #2f4863;">Learn</p></button>
         </div>
         <div>
-            <button type="button" class="btn btn-dark" style="font-size: 15px; font-weight: 500px">Sign Up</button>
+            <button type="button" class="btn btn-dark" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/error';">Sign Up</button>
             <button type="button" class="btn btn-outline-dark" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/login';"><i class="bi bi-person"></i>&nbsp;&nbsp;Log In</button>
         </div>
 
@@ -600,12 +605,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                         <!--Beginner selected-->
                         <li style="color: #4cbb17;">Beginner</li>
                         <li style="color: #ff7800;" onclick="window.location.href='#row6';">Intermediate</li>
-                        <li style="color: #e60000; border: none;" onclick="window.location.href='#row9';">Advanced</li>
+                        <li style="color: #e60000; border: none;" onclick="window.location.href='#wall';">Advanced</li>
                     </ul>
                 </div>
             </div>
             <p id="row1" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Mikro Get Started Courses</p>
-            <div class="row" style="margin-bottom: 40px">
+            <div class="row" style="margin-bottom: 40px" onclick="location.href='/home/learn';">
                 <div class="col-4 col-sm-4 col-md-3">
                     <div class="card w-100">
                         <img height="168px" src="https://i.im.ge/2021/08/29/QFR4GK.png">
@@ -646,7 +651,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
             <!--Row 2-->
             <p id="row2" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Savings and Financial Habits</p>
-            <div class="row" style="margin-bottom: 40px">
+            <div class="row" style="margin-bottom: 40px" onclick="location.href='/home/learn';">
                 <div class="col-4 col-sm-4 col-md-3">
                     <div class="card w-100">
                         <img height="168px" src="https://images.pexels.com/photos/2253879/pexels-photo-2253879.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
@@ -687,7 +692,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
             <!--Row 3-->
             <p id="row3" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Investing for Beginners</p>
-            <div class="row" style="margin-bottom: 40px">
+            <div class="row" style="margin-bottom: 40px" onclick="location.href='/home/learn';">
                 <div class="col-4 col-sm-4 col-md-3">
                     <div class="card w-100">
                         <img height="168px" src="https://images.pexels.com/photos/394377/pexels-photo-394377.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
@@ -728,7 +733,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
             <!--Row 4-->
             <p id="row4" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Blue Chip Investment Plan (BCIP)</p>
-            <div class="row" style="margin-bottom: 40px">
+            <div class="row" style="margin-bottom: 40px" onclick="location.href='/home/learn';">
                 <div class="col-4 col-sm-4 col-md-3">
                     <div class="card w-100">
                         <img height="168px" src="https://libertex.org/sites/default/files/styles/blog_detail_hero/public/blog/blue_00.jpg?itok=Y4DKLTAJ">
@@ -769,7 +774,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
             <!--Row 5-->
             <p id="row5" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Exchange Traded Fund (ETFs)</p>
-            <div class="row" style="margin-bottom: 40px">
+            <div class="row" style="margin-bottom: 40px" onclick="location.href='/home/learn';">
                 <div class="col-4 col-sm-4 col-md-3">
                     <div class="card w-100">
                         <img height="168px" src="https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
@@ -810,7 +815,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
             <!--Row 6-->
             <p id="row6" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Cryptocurrency</p>
-            <div class="row" style="margin-bottom: 40px">
+            <div class="row" style="margin-bottom: 40px" onclick="location.href='/home/learn';">
                 <div class="col-4 col-sm-4 col-md-3">
                     <div class="card w-100">
                         <img height="168px" src="https://images.pexels.com/photos/730564/pexels-photo-730564.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
@@ -848,211 +853,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
                     </div>
                 </div>
             </div>
-
-            <!--Row 7-->
-            <p id="row7" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Foreign and Exchange (Forex)</p>
-            <div class="row" style="margin-bottom: 40px">
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img src="https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 43 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Introduction: The essential guide to Forex Trading</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 34 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Experts: Foreign and Exchange trends and analysis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img src="https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 28 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">How to analyse Foreign and Exchange trends</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img src="https://images.pexels.com/photos/8524974/pexels-photo-8524974.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 39 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Certification for Foreign and Exchange Trading</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="3" id="wall" style="text-align: -webkit-center;">
+                <button type="button" class="btn btn-success btn" onclick="location.href = '/home/learn';">Sign up to view our full catalog!</button>
             </div>
 
-            <!--Row 8-->
-            <p id="row8" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Robo Financial Advisors</p>
-            <div class="row" style="margin-bottom: 40px">
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 45 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Introduction to Machine Learning Investments</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/158826/structure-light-led-movement-158826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 32 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">How does Robo-Advisors work? Are they safe?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/330771/pexels-photo-330771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 27 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Algorithm-Driven Financial Planning Services</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 39 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">How to use Robo-Advisor to your advantage</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Row 9-->
-            <p id="row9" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Eco-Finance</p>
-            <div class="row" style="margin-bottom: 40px">
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px"  src="https://images.pexels.com/photos/4828935/pexels-photo-4828935.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 34 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Econometrics: Methods and Applications</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/7496747/pexels-photo-7496747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 15 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Age of Sustainable Development Economy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/6509144/pexels-photo-6509144.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 18 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Green Investments and their Benefits</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/8853502/pexels-photo-8853502.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 22 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Business and Social Impact Anlaysis</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Row 10-->
-            <p id="row10" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Advance Investment Analysis</p>
-            <div class="row" style="margin-bottom: 40px">
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/240163/pexels-photo-240163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 19 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">How to Construct Stock Market Indices for Analysis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/97080/pexels-photo-97080.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 32 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Leverage Google Finance Functions in Sheets</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/3970330/pexels-photo-3970330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 11 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">FinTech: Transformation, Regulations and Risks</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/6476580/pexels-photo-6476580.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 20  min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Experts: Utilising Discounted Cash Flow Modeling</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--Row 11-->
-            <p id="row11" style="font-size: 1.4rem; text-align: center; font-weight: 500; margin-bottom: 0;">Advanced Investment Strategies</p>
-            <div class="row" style="margin-bottom: 40px">
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 43 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Stock Valuation with Comparable Companies Analysis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 57 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Python and Statistics for Financial Analysis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/277124/pexels-photo-277124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 34 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Analyzing company performance using Ratios</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="card w-100">
-                        <img height="168px" src="https://images.pexels.com/photos/6229/marketing-board-strategy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                        <div class="card-body" style="padding-top: 0;">
-                            <small style="color: gray; font-size: 12px;">Watch, 19 min</small>
-                            <p class="card-text" style="font-size: 14px; font-weight: 500px;">Advanced Valuation and Strategy - Venture</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </section>

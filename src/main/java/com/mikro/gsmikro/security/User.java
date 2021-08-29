@@ -23,6 +23,15 @@ public class User {
     @Column(name = "lastname")
     private String lastName;
 
+    @Column(name = "balance")
+    private double balance;
+
+    @Column(name = "fixeddeposits")
+    private double fixeddeposits;
+
+    @Column(name = "investments")
+    private double investments;
+
     @Column(name = "contactnumber")
     private String contactNumber;
 
@@ -52,6 +61,8 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
+
+
     public String getFirstName() {
         return firstName;
     }
@@ -78,6 +89,30 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getFixeddeposits() {
+        return fixeddeposits;
+    }
+
+    public void setFixeddeposits(double fixeddeposits) {
+        this.fixeddeposits = fixeddeposits;
+    }
+
+    public double getInvestments() {
+        return investments;
+    }
+
+    public void setInvestments(double investments) {
+        this.investments = investments;
     }
 
     public void setPassword(String password) {
@@ -123,6 +158,9 @@ public class User {
                 ", emailAddress='" + emailAddress + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", balance='" + balance + '\'' +
+                ", fixeddeposits='" + fixeddeposits + '\'' +
+                ", investments='" + investments + '\'' +
                 ", contactNumber='" + contactNumber + '\'' +
                 ", password='" + password + '\'' +
                 ", tempInputRole='" + tempInputRole + '\'' +

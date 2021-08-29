@@ -2,12 +2,14 @@ package com.mikro.gsmikro.controller;
 
 import com.mikro.gsmikro.security.MyUserDetailsService;
 import com.mikro.gsmikro.security.User;
+import com.mikro.gsmikro.security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.security.Principal;
 import java.text.ParseException;
@@ -18,6 +20,9 @@ import java.time.LocalTime;
 public class HomeController {
     @Autowired
     MyUserDetailsService myUserDetailsService;
+
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping("/error")
     public String error(){
@@ -32,24 +37,14 @@ public class HomeController {
         principalUser.setLastLogin(LocalDateTime.now());
         myUserDetailsService.save(principalUser);
 
-        String firstName = principalUser.getFirstName();
-        model.addAttribute("firstName", firstName);
+        model.addAttribute("savings",principalUser.getBalance());
+        model.addAttribute("fixed",principalUser.getFixeddeposits());
+        model.addAttribute("investments",principalUser.getInvestments());
+        model.addAttribute("firstname",principalUser.getFirstName());
 
-        // Aesthetics Function for HTML
-        LocalTime now = LocalTime.now();
-        String timeofDay = null;
-        if (now.isAfter(LocalTime.parse("17:00"))){
-            timeofDay = "Evening";
-        } else if (now.isAfter(LocalTime.parse("12:00"))) {
-            timeofDay = "Afternoon";
-        } else if (now.isAfter(LocalTime.parse("00:00"))){
-            timeofDay = "Morning";
-        }
-        model.addAttribute("MAE",timeofDay);
-
-        // Fetch All Subscribed Vessels Alerts
         return "home";
     }
+
 
     @GetMapping("/home/remittance")
     public String remittance(){
@@ -62,7 +57,13 @@ public class HomeController {
     }
 
     @GetMapping("/home/invest")
-    public String invest(){
+    public String invest(Model model, @AuthenticationPrincipal Authentication authentication, Principal principal){
+        String principalEmail = principal.getName();
+        User principalUser = myUserDetailsService.findByEmailAddress(principalEmail);
+        model.addAttribute("firstname",principalUser.getFirstName());
+        model.addAttribute("fixed",principalUser.getFixeddeposits());
+        model.addAttribute("investments",principalUser.getInvestments());
+
         return "invest";
     }
 
@@ -72,7 +73,12 @@ public class HomeController {
     }
 
     @GetMapping("/home/save")
-    public String save(){
+    public String save(Model model, @AuthenticationPrincipal Authentication authentication, Principal principal){
+        String principalEmail = principal.getName();
+        User principalUser = myUserDetailsService.findByEmailAddress(principalEmail);
+        model.addAttribute("savings",principalUser.getBalance());
+        model.addAttribute("firstname",principalUser.getFirstName());
+
         return "save";
     }
 

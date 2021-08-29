@@ -558,95 +558,39 @@ h1, h2, h3, h4, h5, h6, .font-heading {
         </div>
         <div>
             <button type="button" class="btn btn-danger" style="font-size: 15px; font-weight: 500px" onclick="location.href = '/logout';"><i class="bi bi-box-arrow-right"></i>&nbsp;&nbsp;Log Out</button>
+            <button type="button" class="btn btn-secondary"><i class="bi bi-person" onclick="location.href = '/error';"></i></button>
         </div>
 
     </div>
 </nav>
 
 <main id="main">
-    <section class="section" style="padding-top: 3rem;">
+    <section class="section" style="padding: 3rem 0; padding-bottom: 0;">
         <div class="container">
-            <div class="row justify-content-center text-center mb-4">
-                <div class="col-12">
-                    <h3 class="h3 heading">Organisations We've Worked With</h3>
-                    <p>Mikro has worked with a wide range of organisations over the past 15 years.<br>This includes social enterprises, trust and foundations, government bodies and businesses.</p>
+            <div class="d-flex bd-highlight mb-3" style="padding-bottom: 2rem;">
+                <div class="mr-auto p-2 bd-highlight">
+                    <h3 class="heading h3">Investments Overview</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/sw2YP4T/CMSC-logo-Option-1-A-1.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/0Z9pj7V/logo-westlite-1.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/JxN6sSQ/organization-logo.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/LvwDKRg/mom-logo-share-hd.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/k4Cs2xX/HOMELogo.png" alt="Image" class="img-fluid"></a>
-                </div>
-                <div class="col-4 col-sm-4 col-md-2">
-                    <a class="client-logo"><img src="https://i.ibb.co/yN2JQnx/1200px-National-Council-of-Social-Service-logo.png" alt="Image" class="img-fluid"></a>
+            <div class="gamut-59hvi-LayoutGrid e10xj1580" style="padding-top: 1rem;">
+                <div class="gamut-u4h8rt-Column e1y0e4q30" style="padding-left: 24px;">
+                    <div class="row" style="margin-bottom: 40px">
+<!--                        <div class="col-12 col-md-4" style="border-right: 1px solid #999;">-->
+<!--                            <h3>Deposits Balance</h3>-->
+<!--                            <p><small>SGD </small><span th:text="${savings}"></span></p>-->
+<!--                        </div>-->
+                        <div class="col-12 col-md-4" style="border-right: 1px solid #999;">
+                            <h3>Fix Deposits</h3>
+                            <p><small>SGD </small><span th:text="${fixed}"></span></p>
+                        </div>
+                        <div class="col-12 col-md-4" style="padding-left: 3rem;">
+                            <h3>Investments</h3>
+                            <p><small>SGD </small><span th:text="${investments}"></span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section" style="padding: 3rem 0;">
-        <div class="container">
-            <div class="row justify-content-center text-center mb-4">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <img src="https://i.im.ge/2021/08/28/QuibB1.png" alt="Mobile application" style="height: 760px;">
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6" style="padding-top:13rem; text-align: -webkit-left;">
-                    <h3 class="h3 heading">
-                        Manage your services on the go!
-                    </h3>
-                    <p>The Mikros mobile app give you fast, easy mobile access to your account anytime with just a few taps.</p>
-                    <img src="https://iconape.com/wp-content/png_logo_vector/app-store-google-play-logo.png" alr="Store icon" style="height:130px;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section services" style="padding: 3rem;">
-        <div class="container">
-            <div class="row justify-content-center text-center mb-4">
-                <div class="col-12">
-                    <h3 class="h3 heading">Our Services</h3>
-                    <p>We provide a dedicated range of micro-financial services which has been tailors specifically to suit your needs.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-currency-exchange"></i>
-                    <h3 class="h4 mb-2 heading">Remittances</h3>
-                    <p style="text-align: justify;font-size: 1.02rem;">Remit money; no hidden fee.</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-briefcase"></i>
-                    <h3 class="h4 mb-2 heading">Investments</h3>
-                    <p style="text-align: justify;font-size: 1.02rem;">Managed portfolio to help achieve your goals.</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-life-preserver"></i>
-                    <h3 class="h4 mb-2 heading">Savings</h3>
-                    <p style="text-align: justify;font-size: 1.02rem;">High-yield of up to 0.50% APY.</p>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3" style="padding: 1.5rem; text-align-last: center;">
-                    <i class="bi bi-book"></i>
-                    <h3 class="h4 mb-2 heading">Micro-Loans</h3>
-                    <p style="text-align: justify; font-size: 1.02rem;">No-fee, fixed-rate loans from as small as $100.</p>
-                </div>
-                <!--                <div class="col-12 col-sm-6 col-md-6 col-lg-3">-->
-                <!--                    <i class="bi bi-calendar4-week"></i>-->
-                <!--                    <h4 class="h4 mb-2">SEO</h4>-->
-                <!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit explicabo inventore.</p>-->
-                <!--                </div>-->
-            </div>
+            <img src="https://i.im.ge/2021/08/29/QFV6Vf.png" style="height: 600px; margin-bottom: 200px;">
         </div>
     </section>
 
