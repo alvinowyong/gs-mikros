@@ -1,11 +1,11 @@
 # Mikros™ - Migrate to a better future (Demo available at: https://bit.ly/3zrYwnP)
 ### Instructions for Log-in Information
 Please use one of the following account when prompted
-- id: testuser
-- password: password
+- **id:** testuser
+- **password:** password
 
-- id: dollythesheep
-- password:password
+- **id:** dollythesheep
+- **password:** password
 
 # By Team Noobs TS034 - Ellipsis Hackathon 2021
 1. Owyong Jian Wei
