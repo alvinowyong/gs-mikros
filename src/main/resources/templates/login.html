@@ -5,7 +5,6 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
     <style>
     .noselect {
         cursor: default;
@@ -296,8 +295,7 @@
                                           autocomplete="off" /> <label class="noselect">User ID</label> </div>
             <div class="user-box"> <input type="password" name="password" class="form-control" required
                                           autocomplete="off" /> <label class="noselect">PIN</label> </div>
-            <p> <button class="g-recaptcha btn btn-dark btn-lg btn-block"
-                        data-sitekey="6Lfe838aAAAAACP4lVa6w1_w7vxEFLt55QC9p2Yi" data-callback="onSubmit"
+            <p> <button class="btn btn-dark btn-lg btn-block" data-callback="onSubmit"
                         data-action="submit">Login </button> </p>
             <p><input type="button" value="Register" class="btn btn-outline-dark btn-lg btn-block" onclick="location.href = '/error';"/> </p><a
                 href="/error" target="_blank"> Forgot User ID or PIN </a> <a target="_blank" href="/error"> Frequently Asked Questions</a> <a target="_blank" href="/error">
